@@ -1,0 +1,47 @@
+<idea-plugin version="2">
+    <id>com.your.company.unique.plugin.id</id>
+    <name>Panda Image Compression</name>
+    <version>1.0</version>
+    <vendor email="1139280884@qq.com" url="http://www.jianshu.com/users/68debfc01c4f/latest_articles">Thea</vendor>
+
+    <description><![CDATA[
+      This will help your to compression jpg or png images.
+    ]]></description>
+
+    <change-notes><![CDATA[
+      1.0: First version released.
+    ]]>
+    </change-notes>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="141.0"/>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.lang</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+        <action id="ImageCompressAction" class="ImageCompressAction" text="Panda Image Compress"
+                description="Panda Image Compression" icon="/ic_panda.png">
+            <add-to-group group-id="Images.EditorToolbar" anchor="last"/>
+            <add-to-group group-id="Images.ThumbnailsPopupMenu" anchor="last"/>
+        </action>
+        <action id="ImagesCompressAction" class="ImagesCompressAction" text="Panda Image Compress"
+                description="Panda Image Compression" icon="/ic_panda.png">
+            <add-to-group group-id="FileOpenGroup" anchor="last"/>
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt P"/>
+        </action>
+    </actions>
+
+    <application-components>
+        <component>
+            <implementation-class>ImageApplication</implementation-class>
+        </component>
+    </application-components>
+</idea-plugin>
